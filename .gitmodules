@@ -1,0 +1,18 @@
+[submodule "lib_xs3_math/lib_xs3_math"]
+	path = xs3_math/lib_xs3_math
+	url = git@github.com:xmos/lib_xs3_math.git
+[submodule "l2_cache/lib_l2_cache"]
+	path = l2_cache/lib_l2_cache
+	url = git@github.com:xmos/lib_l2_cache.git
+[submodule "random/lib_random"]
+	path = random/lib_random
+	url = git@github.com:xmos/lib_random.git
+[submodule "otpinfo/lib_otpinfo"]
+	path = otpinfo/lib_otpinfo
+	url = git@github.com:xmos/lib_otpinfo.git
+[submodule "inferencing/lib_tflite_micro"]
+	path = inferencing/lib_tflite_micro
+	url = git@github.com:xmos/lib_tflite_micro.git
+[submodule "inferencing/lib_nn"]
+	path = inferencing/lib_nn
+	url = git@github.com:xmos/lib_nn.git
