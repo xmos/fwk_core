@@ -15,7 +15,7 @@ enable_language(CXX C ASM)
 option(FRAMEWORK_CORE_TESTS     "Enable framework_core tests"  OFF)
 
 ## Setup a framework root path
-SET(FRAMEWORK_CORE_ROOT_PATH ${PROJECT_SOURCE_DIR}
+SET(FRAMEWORK_CORE_ROOT_PATH ${PROJECT_SOURCE_DIR})
 
 ## Add framework libraries
 add_subdirectory(clock_control)
