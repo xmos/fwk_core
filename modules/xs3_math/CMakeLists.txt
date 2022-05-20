@@ -45,28 +45,27 @@ else()
 endif()
 
 ## Create library target
-add_library(xcore_sdk_lib_xs3_math STATIC)
-target_sources(xcore_sdk_lib_xs3_math
+add_library(framework_core_xs3_math STATIC)
+target_sources(framework_core_xs3_math
     PUBLIC
         ${LIB_PUBLIC_SOURCES}
     PRIVATE
         ${LIB_PRIVATE_SOURCES}
 )
-target_include_directories(xcore_sdk_lib_xs3_math
+target_include_directories(framework_core_xs3_math
     PUBLIC
         ${LIB_PUBLIC_INCLUDES}
     PRIVATE
         ${LIB_PRIVATE_INCLUDES}
 )
-target_compile_options(xcore_sdk_lib_xs3_math
+target_compile_options(framework_core_xs3_math
     PRIVATE
         ${LIB_COMPILE_FLAGS}
 )
-target_link_libraries(xcore_sdk_lib_xs3_math
+target_link_libraries(framework_core_xs3_math
     PUBLIC
-        $<$<PLATFORM_ID:XCORE_XS3A>:sdk::legacy_compat>
+        $<$<PLATFORM_ID:XCORE_XS3A>:core::legacy_compat>
 )
 
 ## Create an alias
-add_library(sdk::lib_xs3_math ALIAS xcore_sdk_lib_xs3_math)
-
+add_library(sdk::lib_xs3_math ALIAS framework_core_xs3_math)

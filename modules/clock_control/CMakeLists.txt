@@ -27,28 +27,28 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
     list(APPEND LIB_PRIVATE_SOURCES ${${CMAKE_SYSTEM_NAME}_SOURCES})
 
     ## Create library target
-    add_library(xcore_sdk_hil_lib_clock_control STATIC)
-    target_sources(xcore_sdk_hil_lib_clock_control
+    add_library(framework_core_clock_control STATIC)
+    target_sources(framework_core_clock_control
         PUBLIC
             ${LIB_PUBLIC_SOURCES}
         PRIVATE
             ${LIB_PRIVATE_SOURCES}
     )
-    target_include_directories(xcore_sdk_hil_lib_clock_control
+    target_include_directories(framework_core_clock_control
         PUBLIC
             ${LIB_PUBLIC_INCLUDES}
         PRIVATE
             ${LIB_PRIVATE_INCLUDES}
     )
-    target_compile_options(xcore_sdk_hil_lib_clock_control
+    target_compile_options(framework_core_clock_control
         PRIVATE
             ${LIB_COMPILE_FLAGS}
     )
-    target_link_libraries(xcore_sdk_hil_lib_clock_control
+    target_link_libraries(framework_core_clock_control
         PUBLIC
-            sdk::utils
+            core::utils
     )
 
     ## Create an alias
-    add_library(sdk::hil::lib_clock_control ALIAS xcore_sdk_hil_lib_clock_control)
+    add_library(core::clock_control ALIAS framework_core_clock_control)
 endif()

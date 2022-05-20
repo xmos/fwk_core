@@ -1,16 +1,16 @@
 
 if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS2A))
     ## Create library target
-    add_library(xcore_sdk_legacy_compat INTERFACE)
-    target_include_directories(xcore_sdk_legacy_compat
+    add_library(framework_core_legacy_compat INTERFACE)
+    target_include_directories(framework_core_legacy_compat
         INTERFACE
             api
     )
-    target_link_libraries(xcore_sdk_legacy_compat
+    target_link_libraries(framework_core_legacy_compat
         INTERFACE
-            sdk::utils
+            core::utils
     )
 
     ## Create an alias
-    add_library(core::legacy_compat ALIAS xcore_sdk_legacy_compat)
+    add_library(core::legacy_compat ALIAS framework_core_legacy_compat)
 endif()

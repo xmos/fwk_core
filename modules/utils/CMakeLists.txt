@@ -28,22 +28,22 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
 
     ## Create library target
     ## INTERFACE because we depend on the app specific debug flags
-    add_library(xcore_sdk_utils INTERFACE)
-    target_sources(xcore_sdk_utils
+    add_library(framework_core_utils INTERFACE)
+    target_sources(framework_core_utils
         INTERFACE
             ${LIB_PUBLIC_SOURCES}
             ${LIB_PRIVATE_SOURCES}
     )
-    target_include_directories(xcore_sdk_utils
+    target_include_directories(framework_core_utils
         INTERFACE
             ${LIB_PUBLIC_INCLUDES}
             ${LIB_PRIVATE_INCLUDES}
     )
-    target_compile_options(xcore_sdk_utils
+    target_compile_options(framework_core_utils
         INTERFACE
             $<$<CONFIG:Debug>:-DDEBUG_PRINT_ENABLE=1>
     )
 
     ## Create an alias
-    add_library(core::utils ALIAS xcore_sdk_utils)
+    add_library(core::utils ALIAS framework_core_utils)
 endif()

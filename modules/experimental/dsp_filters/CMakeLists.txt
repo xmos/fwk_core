@@ -1,17 +1,17 @@
 
 ######
-add_library(sdk_dsp_filters STATIC)
-target_sources(sdk_dsp_filters
+add_library(framework_core_dsp_filters STATIC)
+target_sources(framework_core_dsp_filters
     PRIVATE
         src/dsp_filters.c
 )
-target_include_directories(sdk_dsp_filters
+target_include_directories(framework_core_dsp_filters
     PUBLIC
         api
 )
-target_link_libraries(sdk_dsp_filters
+target_link_libraries(framework_core_dsp_filters
     PUBLIC
-        sdk::lib_xs3_math
+        core::xs3_math
 )
 
-add_library(sdk::dsp::filters ALIAS sdk_dsp_filters)
+add_library(core::dsp_filters ALIAS framework_core_dsp_filters)

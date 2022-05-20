@@ -7,7 +7,7 @@ SET(LIB_TFLITE_MICRO_SUBMODULES_PATH ${LIB_TFLITE_MICRO_PATH}/submodules)
 ## ****************************************
 if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
     ## Create library target for the tflite-micro microfrontend
-    add_library(xcore_sdk_inferencing_microfrontend STATIC)
+    add_library(framework_core_inferencing_microfrontend STATIC)
 
     ## Source files
     set(MICROFRONTEND_PRIVATE_SOURCES
@@ -30,31 +30,31 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
         "${LIB_TFLITE_MICRO_SUBMODULES_PATH}/tflite-micro/tensorflow/lite/experimental/microfrontend/lib/window_util.c"
     )
 
-    target_sources(xcore_sdk_inferencing_microfrontend
+    target_sources(framework_core_inferencing_microfrontend
         PRIVATE
             ${MICROFRONTEND_PRIVATE_SOURCES}
     )
-    target_include_directories(xcore_sdk_inferencing_microfrontend
+    target_include_directories(framework_core_inferencing_microfrontend
         PUBLIC
             "${LIB_TFLITE_MICRO_SUBMODULES_PATH}/tflite-micro"
             kissfft
     )
 
-    target_compile_definitions(xcore_sdk_inferencing_microfrontend
+    target_compile_definitions(framework_core_inferencing_microfrontend
         PUBLIC
             FIXED_POINT=16
     )
 
     ## Create an alias
-    add_library(sdk::inferencing::microfrontend ALIAS xcore_sdk_inferencing_microfrontend)
+    add_library(core::microfrontend ALIAS framework_core_inferencing_microfrontend)
 endif()
 
 ## **********************************
 ## Create tflite-micro runtime target
 ## **********************************
 if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
-    add_library(xcore_sdk_inferencing_tflite_micro STATIC)
-    target_sources(xcore_sdk_inferencing_tflite_micro
+    add_library(framework_core_inferencing_tflite_micro STATIC)
+    target_sources(framework_core_inferencing_tflite_micro
         PRIVATE
             ## tflite-micro runtime sources
             ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/tflite-micro/tensorflow/lite/c/common.c
@@ -157,34 +157,34 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
             ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/tflite-micro/tensorflow/lite/micro/kernels/transpose_conv.cc
             ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/tflite-micro/tensorflow/lite/micro/kernels/unpack.cc
         )
-    target_include_directories(xcore_sdk_inferencing_tflite_micro
+    target_include_directories(framework_core_inferencing_tflite_micro
         PUBLIC
             ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/gemmlowp
             ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/ruy
             ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/flatbuffers/include
             ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/tflite-micro
-            ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/tflite-micro/tensorflow/lite/micro/kernels    
+            ${LIB_TFLITE_MICRO_SUBMODULES_PATH}/tflite-micro/tensorflow/lite/micro/kernels
     )
-    target_compile_options(xcore_sdk_inferencing_tflite_micro 
+    target_compile_options(framework_core_inferencing_tflite_micro
         PRIVATE
             "-Os"
             "-Wno-xcore-fptrgroup"
             $<$<COMPILE_LANGUAGE:CXX>:-std=c++11>
-    )  
-    target_compile_definitions(xcore_sdk_inferencing_tflite_micro 
+    )
+    target_compile_definitions(framework_core_inferencing_tflite_micro
         PUBLIC
             "TF_LITE_STATIC_MEMORY"
             $<$<CONFIG:RELEASE>:TF_LITE_STRIP_ERROR_STRINGS>
     )
     ## Create an alias
-    add_library(sdk::inferencing::tflite_micro ALIAS xcore_sdk_inferencing_tflite_micro)
+    add_library(core::tflite_micro ALIAS framework_core_inferencing_tflite_micro)
 endif()
 
 ## ********************
 ## Create lib_nn target
 ## ********************
 if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
-    add_library(xcore_sdk_inferencing_lib_nn STATIC)
+    add_library(framework_core_inferencing_lib_nn STATIC)
 
     ## Source files
     file(GLOB_RECURSE LIB_NN_SOURCES_ASM lib_nn/lib_nn/src/asm/*.S)
@@ -203,16 +203,16 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
     ## Append platform specific sources
     list(APPEND LIB_NN_PRIVATE_SOURCES ${${CMAKE_SYSTEM_NAME}_SOURCES})
 
-    target_sources(xcore_sdk_inferencing_lib_nn
+    target_sources(framework_core_inferencing_lib_nn
         PRIVATE
             ${LIB_NN_PRIVATE_SOURCES}
     )
-    target_include_directories(xcore_sdk_inferencing_lib_nn
+    target_include_directories(framework_core_inferencing_lib_nn
         PUBLIC
             lib_nn/lib_nn/api
             lib_nn
     )
-    target_compile_options(xcore_sdk_inferencing_lib_nn 
+    target_compile_options(framework_core_inferencing_lib_nn
         PRIVATE
             "-Os"
             "-Wno-xcore-fptrgroup"
@@ -220,20 +220,20 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
     )
 
     ## Create an alias
-    add_library(sdk::inferencing::lib_nn ALIAS xcore_sdk_inferencing_lib_nn)
+    add_library(core::lib_nn ALIAS framework_core_inferencing_lib_nn)
 endif()
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
     ## ******************************
     ## Create lib_tflite_micro target
     ## ******************************
-    add_library(xcore_sdk_inferencing_lib_tflite_micro INTERFACE)
+    add_library(framework_core_inferencing_tflite_micro_xcore INTERFACE)
 
     ## Source files
     file(GLOB_RECURSE LIB_TFLITE_MICRO_SOURCES_ASM ${LIB_TFLITE_MICRO_PATH}/src/*.S)
     set_source_files_properties(LIB_TFLITE_MICRO_SOURCES_ASM PROPERTIES LANGUAGE ASM)
 
-    target_sources(xcore_sdk_inferencing_lib_tflite_micro
+    target_sources(framework_core_inferencing_tflite_micro_xcore
         INTERFACE
             ${LIB_TFLITE_MICRO_SOURCES_ASM}
             ${LIB_TFLITE_MICRO_PATH}/src/inference_engine.cc
@@ -246,19 +246,18 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
             ${LIB_TFLITE_MICRO_PATH}/src/tflite-xcore-kernels/xcore_load_from_flash.cc
             ${LIB_TFLITE_MICRO_PATH}/src/tflite-xcore-kernels/xcore_profiler.cc
     )
-
-    target_include_directories(xcore_sdk_inferencing_lib_tflite_micro
+    target_include_directories(framework_core_inferencing_tflite_micro_xcore
         INTERFACE
             ${LIB_TFLITE_MICRO_PATH}/api
             ${LIB_TFLITE_MICRO_PATH}/src
             ${LIB_TFLITE_MICRO_PATH}/src/tflite-xcore-kernels
     )
-    target_link_libraries(xcore_sdk_inferencing_lib_tflite_micro
+    target_link_libraries(framework_core_inferencing_tflite_micro_xcore
         INTERFACE
-            sdk::inferencing::lib_nn
-            sdk::inferencing::tflite_micro
+            core::lib_nn
+            core::tflite_micro
     )
-    target_compile_options(xcore_sdk_inferencing_lib_tflite_micro 
+    target_compile_options(framework_core_inferencing_tflite_micro_xcore
         INTERFACE
             "-Os"
             "-Wno-xcore-fptrgroup"
@@ -266,6 +265,5 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
     )
 
     ## Create an alias
-    add_library(sdk::inferencing::lib_tflite_micro ALIAS xcore_sdk_inferencing_lib_tflite_micro)
+    add_library(core::tflite_micro_xcore ALIAS framework_core_inferencing_tflite_micro_xcore)
 endif()
-
