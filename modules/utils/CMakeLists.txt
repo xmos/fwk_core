@@ -45,5 +45,5 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
     )
 
     ## Create an alias
-    add_library(sdk::utils ALIAS xcore_sdk_utils)
+    add_library(core::utils ALIAS xcore_sdk_utils)
 endif()
