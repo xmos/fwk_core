@@ -15,7 +15,7 @@ enable_language(CXX C ASM)
 option(FRAMEWORK_CORE_TESTS     "Enable framework_core tests"  OFF)
 
 ## Setup a framework root path
-SET(FRAMEWORK_CORE_ROOT_PATH ${PROJECT_SOURCE_DIR})
+set(FRAMEWORK_CORE_ROOT_PATH ${PROJECT_SOURCE_DIR} CACHE STRING "Root folder of framework_core in this cmake project tree")
 
 ## Add framework libraries
 add_subdirectory(clock_control)
