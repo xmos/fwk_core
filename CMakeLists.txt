@@ -18,14 +18,7 @@ option(FRAMEWORK_CORE_TESTS     "Enable framework_core tests"  OFF)
 set(FRAMEWORK_CORE_ROOT_PATH ${PROJECT_SOURCE_DIR} CACHE STRING "Root folder of framework_core in this cmake project tree")
 
 ## Add framework libraries
-add_subdirectory(clock_control)
-add_subdirectory(experimental)
-add_subdirectory(inferencing)
-add_subdirectory(l2_cache)
-add_subdirectory(otpinfo)
-add_subdirectory(random)
-add_subdirectory(xs3_math)
-add_subdirectory(utils)
+add_subdirectory(modules)
 
 ## Add targets for when this is the top level project
 if(PROJECT_IS_TOP_LEVEL)
