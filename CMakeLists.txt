@@ -25,6 +25,7 @@ add_subdirectory(l2_cache)
 add_subdirectory(otpinfo)
 add_subdirectory(random)
 add_subdirectory(xs3_math)
+add_subdirectory(utils)
 
 ## Add targets for when this is the top level project
 if(PROJECT_IS_TOP_LEVEL)
