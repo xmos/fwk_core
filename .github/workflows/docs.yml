@@ -30,7 +30,7 @@ jobs:
     name: Build and package documentation
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout SDK
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           submodules: recursive
