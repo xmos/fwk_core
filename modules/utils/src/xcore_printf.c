@@ -16,7 +16,8 @@
 #include <stdint.h>
 #include <ctype.h>
 
-#include "xcore_utils.h"
+#include "xcore_printf.h"
+#include "xcore_interrupt.h"
 
 #define LONG64 (LONG_MAX == 9223372036854775807L)
 #define POINTER64 (INTPTR_MAX == 9223372036854775807L)
