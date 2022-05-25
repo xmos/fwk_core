@@ -8,9 +8,18 @@ void main_tile0(chanend c0, chanend c1, chanend c2, chanend c3);
 void main_tile1(chanend c0, chanend c1, chanend c2, chanend c3);
 void main_tile2(chanend c0, chanend c1, chanend c2, chanend c3);
 void main_tile3(chanend c0, chanend c1, chanend c2, chanend c3);
+#if (XSCOPE_HOST_IO_ENABLED == 1)
+#ifndef XSCOPE_HOST_IO_TILE
+#define XSCOPE_HOST_IO_TILE 0
+#endif
+void init_xscope_host_data_user_cb(chanend c_host);
+#endif
 }
 
 int main(void) {
+#if (XSCOPE_HOST_IO_ENABLED == 1)
+  chan c_xscope_host;
+#endif
 #if ((PLATFORM_SUPPORTS_TILE_0 == 1) && (PLATFORM_USES_TILE_0 == 1) && \
      (PLATFORM_SUPPORTS_TILE_1 == 1) && (PLATFORM_USES_TILE_1 == 1))
   chan c_t0_t1;
@@ -37,86 +46,91 @@ int main(void) {
 #endif
 
   par {
+#if (XSCOPE_HOST_IO_ENABLED == 1)
+    xscope_host_data(c_xscope_host);
+    on tile[XSCOPE_HOST_IO_TILE] : init_xscope_host_data_user_cb(c_xscope_host);
+#endif
 #if (PLATFORM_SUPPORTS_TILE_0 == 1) && (PLATFORM_USES_TILE_0 == 1)
-    on tile[0] : main_tile0(null,
+    on tile[0] : main_tile0(
+                    null,
 #if (PLATFORM_SUPPORTS_TILE_1 == 1) && (PLATFORM_USES_TILE_1 == 1)
-                            c_t0_t1,
+                    c_t0_t1,
 #else
-                            null,
+                    null,
 #endif
 #if (PLATFORM_SUPPORTS_TILE_2 == 1) && (PLATFORM_USES_TILE_2 == 1)
-                            c_t0_t2,
+                    c_t0_t2,
 #else
-                            null,
+                    null,
 #endif
 #if (PLATFORM_SUPPORTS_TILE_3 == 1) && (PLATFORM_USES_TILE_3 == 1)
-                            c_t0_t3
+                    c_t0_t3
 #else
-                            null
+                    null
 #endif
-                 );
+                );
 #endif
 
 #if (PLATFORM_SUPPORTS_TILE_1 == 1) && (PLATFORM_USES_TILE_1 == 1)
     on tile[1] : main_tile1(
 #if (PLATFORM_SUPPORTS_TILE_0 == 1) && (PLATFORM_USES_TILE_0 == 1)
-                     c_t0_t1,
+                    c_t0_t1,
 #else
-                     null,
+                    null,
 #endif
-                     null,
+                    null,
 #if (PLATFORM_SUPPORTS_TILE_2 == 1) && (PLATFORM_USES_TILE_2 == 1)
-                     c_t1_t2,
+                    c_t1_t2,
 #else
-                     null,
+                    null,
 #endif
 #if (PLATFORM_SUPPORTS_TILE_3 == 1) && (PLATFORM_USES_TILE_3 == 1)
-                     c_t1_t3
+                    c_t1_t3
 #else
-                     null
+                    null
 #endif
-                 );
+                );
 #endif
 
 #if (PLATFORM_SUPPORTS_TILE_2 == 1) && (PLATFORM_USES_TILE_2 == 1)
     on tile[2] : main_tile2(
 #if (PLATFORM_SUPPORTS_TILE_0 == 1) && (PLATFORM_USES_TILE_0 == 1)
-                     c_t0_t2,
+                    c_t0_t2,
 #else
-                     null,
+                    null,
 #endif
 #if (PLATFORM_SUPPORTS_TILE_1 == 1) && (PLATFORM_USES_TILE_1 == 1)
-                     c_t1_t2,
+                    c_t1_t2,
 #else
-                     null,
+                    null,
 #endif
-                     null,
+                    null,
 #if (PLATFORM_SUPPORTS_TILE_3 == 1) && (PLATFORM_USES_TILE_3 == 1)
-                     c_t2_t3
+                    c_t2_t3
 #else
-                     null
+                    null
 #endif
-                 );
+                );
 #endif
 
 #if (PLATFORM_SUPPORTS_TILE_3 == 1) && (PLATFORM_USES_TILE_3 == 1)
     on tile[3] : main_tile3(
 #if (PLATFORM_SUPPORTS_TILE_0 == 1) && (PLATFORM_USES_TILE_0 == 1)
-                     c_t0_t3,
+                    c_t0_t3,
 #else
-                     null,
+                    null,
 #endif
 #if (PLATFORM_SUPPORTS_TILE_1 == 1) && (PLATFORM_USES_TILE_1 == 1)
-                     c_t1_t3,
+                    c_t1_t3,
 #else
-                     null,
+                    null,
 #endif
 #if (PLATFORM_SUPPORTS_TILE_2 == 1) && (PLATFORM_USES_TILE_2 == 1)
-                     c_t2_t3
+                    c_t2_t3
 #else
-                     null,
+                    null,
 #endif
-                         null);
+                    null);
 #endif
   }
 

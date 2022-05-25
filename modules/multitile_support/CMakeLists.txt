@@ -5,6 +5,7 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
     target_sources(framework_core_multitile_support
         INTERFACE
             src/soc_intertile_channel.c
+            src/xscope_host_support.c
             src/tile_map_defaults.c
             src/tile_map.xc
     )
