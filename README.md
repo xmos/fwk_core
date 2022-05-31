@@ -29,6 +29,14 @@ Some dependent components are included as git submodules. These can be obtained 
 
     $ git clone --recurse-submodules https://github.com/xmos/fwk_core.git
 
+## Testing
+
+No tests exist in this repository yet.  Unit tests for some libraries are in the repository for each library.
+
+## Documentation
+
+Information on building the documentation can be found in the docs [README](https://github.com/xmos/fwk_core/blob/develop/doc/README.rst).
+
 ## License
 
-This Software is subject to the terms of the [XMOS Public Licence: Version 1](https://github.com/xmos/xcore_sdk/blob/develop/LICENSE.rst)
+This Software is subject to the terms of the [XMOS Public Licence: Version 1](https://github.com/xmos/fwk_core/blob/develop/LICENSE.rst)
