@@ -13,4 +13,4 @@ Optimized
    :maxdepth: 1
    :includehidden:
 
-   modules/xs3_math/lib_xs3_math/lib_xs3_math/doc/index.rst
+   modules/xs3_math/lib_xs3_math/doc/index.rst
