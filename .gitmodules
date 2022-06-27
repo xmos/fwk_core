@@ -10,12 +10,6 @@
 [submodule "lib_otpinfo"]
 	path = modules/otpinfo/lib_otpinfo
 	url = git@github.com:xmos/lib_otpinfo.git
-[submodule "lib_tflite_micro"]
-	path = modules/inferencing/lib_tflite_micro
-	url = git@github.com:xmos/lib_tflite_micro.git
-[submodule "lib_nn"]
-	path = modules/inferencing/lib_nn
-	url = git@github.com:xmos/lib_nn.git
 [submodule "xmos_cmake_toolchain"]
 	path = xmos_cmake_toolchain
 	url = git@github.com:xmos/xmos_cmake_toolchain.git
