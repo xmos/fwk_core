@@ -1,6 +1,6 @@
 # Core Framework Repository
 
-This repository is a collection of C/C++ core libraries used to develop for XCore:
+This repository is a collection of C/C++ core libraries used to develop for xcore:
 
 Commonly used libraries in the Core Framework:
 
@@ -15,7 +15,7 @@ Less commonly used libraries in the Core Framework:
 - L2 cache
 - Random number generation
 
-This repository can be used standalone.  However, it is meant to be used as part of the [XCore SDK](https://github.com/xmos/xcore_sdk).
+This repository can be used standalone.  However, it is meant to be used as part of the [XCORE SDK](https://github.com/xmos/xcore_sdk).
 
 ## Build Status
 
