@@ -6,6 +6,7 @@ add_subdirectory(legacy_compat)
 add_subdirectory(multitile_support)
 add_subdirectory(otpinfo)
 add_subdirectory(random)
+add_subdirectory(trycatch)
 add_subdirectory(utils)
 add_subdirectory(xs3_math)
 
@@ -20,7 +21,7 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
             core::legacy_compat
             core::otpinfo
             core::random
-            core::xs3_math
+            core::trycatch
             core::utils
             core::xs3_math
     )
