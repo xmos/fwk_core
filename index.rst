@@ -4,6 +4,7 @@ Core Framework
 
 Framework of core libraries for XCORE.AI.
 
+.. _fwk_core-optimized:
 
 *********
 Optimized
