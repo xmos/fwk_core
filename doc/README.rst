@@ -16,7 +16,7 @@ Pull the docker container:
 
 .. code-block:: console
 
-    $ docker pull ghcr.io/xmos/doc_builder:main
+    $ docker pull ghcr.io/xmos/doc_builder:latest
 
 ========
 Building
