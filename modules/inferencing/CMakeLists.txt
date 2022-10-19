@@ -70,8 +70,8 @@ else()
     message(STATUS "Fetching: dependencies/lib_tflite_micro")
     FetchContent_Declare(
         lib_tflite_micro
-        GIT_REPOSITORY https://github.com/xmos/lib_tflite_micro.git
-        GIT_TAG        c59ee18f013f159abaa10ef0faf70b18f80f0315
+        GIT_REPOSITORY https://github.com/keithm-xmos/lib_tflite_micro.git
+        GIT_TAG        cd81747ce9e6a363e412683d035b90afb1ca21db
         GIT_SHALLOW    TRUE
         GIT_SUBMODULES_RECURSE TRUE
         SOURCE_DIR     ${CMAKE_BINARY_DIR}/dependencies/lib_tflite_micro
