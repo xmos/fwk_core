@@ -100,6 +100,11 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
             "-Wno-xcore-fptrgroup"
             $<$<COMPILE_LANGUAGE:CXX>:-std=c++11>
     )
+else()
+    target_compile_definitions(inferencing_tflite_micro
+        PRIVATE
+            __xtflm_conf_h_exists__
+    )
 endif()
 
 target_compile_definitions(inferencing_tflite_micro
@@ -107,7 +112,7 @@ target_compile_definitions(inferencing_tflite_micro
         NO_INTERPRETER
         TF_LITE_STATIC_MEMORY
         TF_LITE_STRIP_ERROR_STRINGS
-        __xtflm_conf_h_exists__
+        XTFLM_DISABLED
 )
 
 target_sources(inferencing_tflite_micro
@@ -120,18 +125,17 @@ target_sources(inferencing_tflite_micro
 
 target_include_directories(inferencing_tflite_micro
     PUBLIC
+        "src"
+        "${TFLIB_DIR}/.."
         "${TFLIB_DIR}/../.."
         "${TFLIB_DIR}/api"
         "${TFLIB_DIR}/submodules/tflite-micro"
-        "${TFLIB_DIR}/submodules/flatbuffers/include"
-    PRIVATE
-        "src"
-        "${TFLIB_DIR}/.."
-        "${TFLIB_DIR}/submodules/tflite-micro"
         "${TFLIB_DIR}/submodules/gemmlowp"
         "${TFLIB_DIR}/submodules/ruy"
+        "${TFLIB_DIR}/submodules/flatbuffers/include"
         "${TFLIB_DIR}/src/tflite-xcore-kernels"
 )
+message(STATUS ${TFLIB_DIR})
 target_link_libraries(inferencing_tflite_micro
     PRIVATE
         inferencing_lib_nn
