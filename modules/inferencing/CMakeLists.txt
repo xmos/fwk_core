@@ -71,7 +71,7 @@ else()
     FetchContent_Declare(
         lib_tflite_micro
         GIT_REPOSITORY https://github.com/keithm-xmos/lib_tflite_micro.git
-        GIT_TAG        2719d19313466af4898ac6f22cfb904453fc927f
+        GIT_TAG        5785e9e45fa055ffb339cdfa02e881543a8b1ca1
         GIT_SHALLOW    TRUE
         GIT_SUBMODULES_RECURSE TRUE
         SOURCE_DIR     ${CMAKE_BINARY_DIR}/dependencies/lib_tflite_micro
