@@ -43,7 +43,4 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
         INTERFACE
             $<$<CONFIG:Debug>:-DDEBUG_PRINT_ENABLE=1>
     )
-
-    ## Create an alias
-    add_library(core::utils ALIAS framework_core_utils)
 endif()

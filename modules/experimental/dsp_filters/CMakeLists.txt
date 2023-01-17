@@ -11,7 +11,5 @@ target_include_directories(framework_core_dsp_filters
 )
 target_link_libraries(framework_core_dsp_filters
     PUBLIC
-        core::xs3_math
+        lib_xcore_math
 )
-
-add_library(core::dsp_filters ALIAS framework_core_dsp_filters)

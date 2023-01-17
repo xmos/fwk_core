@@ -46,9 +46,6 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
     )
     target_link_libraries(framework_core_clock_control
         PUBLIC
-            core::utils
+            framework_core_utils
     )
-
-    ## Create an alias
-    add_library(core::clock_control ALIAS framework_core_clock_control)
 endif()
