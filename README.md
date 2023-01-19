@@ -15,7 +15,7 @@ Less commonly used libraries in the Core Framework:
 - L2 cache
 - Random number generation
 
-This repository can be used standalone.  However, it is meant to be used as part of the [XCORE SDK](https://github.com/xmos/xcore_sdk).
+This repository can be used standalone.  However, it is intended to be used as part of a greater project, such as the [XCORE-VOICE Solution](https://github.com/xmos/sln_voice).
 
 ## Build Status
 
@@ -40,3 +40,5 @@ Information on building the documentation can be found in the docs [README](http
 ## License
 
 This Software is subject to the terms of the [XMOS Public Licence: Version 1](https://github.com/xmos/fwk_core/blob/develop/LICENSE.rst)
+
+Third party copyrighted code is specified in the fwk_core [Copyrights and Licenses](https://github.com/xmos/fwk_core/blob/develop/doc/copyright.rst).  
