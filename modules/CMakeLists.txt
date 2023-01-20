@@ -1,7 +1,6 @@
 ## Add framework libraries
 add_subdirectory(clock_control)
 add_subdirectory(experimental)
-add_subdirectory(inferencing)
 add_subdirectory(l2_cache)
 add_subdirectory(legacy_compat)
 add_subdirectory(multitile_support)
@@ -33,7 +32,6 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
     target_link_libraries(framework_core_all
         INTERFACE
             core::general
-            inferencing_tflite_micro
     )
     add_library(core::all ALIAS framework_core_all)
 endif()
