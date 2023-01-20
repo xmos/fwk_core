@@ -8,9 +8,6 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
     )
     target_link_libraries(framework_core_legacy_compat
         INTERFACE
-            core::utils
+            framework_core_utils
     )
-
-    ## Create an alias
-    add_library(core::legacy_compat ALIAS framework_core_legacy_compat)
 endif()

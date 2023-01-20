@@ -16,6 +16,3 @@
 [submodule "trycatch"]
 	path = modules/trycatch/lib_trycatch
 	url = git@github.com:xmos/lib_trycatch.git
-[submodule "modules/inferencing/lib_nn"]
-	path = modules/inferencing/lib_nn
-	url = git@github.com:xmos/lib_nn.git

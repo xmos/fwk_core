@@ -13,7 +13,4 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
         INTERFACE
             api
     )
-
-    ## Create an alias
-    add_library(core::multitile_support ALIAS framework_core_multitile_support)
 endif()

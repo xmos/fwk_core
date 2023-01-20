@@ -27,28 +27,25 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A)
     list(APPEND LIB_PRIVATE_SOURCES ${${CMAKE_SYSTEM_NAME}_SOURCES})
 
     ## Create library target
-    add_library(framework_core_l2_cache STATIC)
-    target_sources(framework_core_l2_cache
+    add_library(lib_l2_cache STATIC)
+    target_sources(lib_l2_cache
         PUBLIC
             ${LIB_PUBLIC_SOURCES}
         PRIVATE
             ${LIB_PRIVATE_SOURCES}
     )
-    target_include_directories(framework_core_l2_cache
+    target_include_directories(lib_l2_cache
         PUBLIC
             ${LIB_PUBLIC_INCLUDES}
         PRIVATE
             ${LIB_PRIVATE_INCLUDES}
     )
-    target_compile_options(framework_core_l2_cache
+    target_compile_options(lib_l2_cache
         PRIVATE
             ${LIB_COMPILE_FLAGS}
     )
-    target_link_libraries(framework_core_l2_cache
+    target_link_libraries(lib_l2_cache
         PUBLIC
-            core::utils
+            framework_core_utils
     )
-
-    ## Create an alias
-    add_library(core::l2_cache ALIAS framework_core_l2_cache)
 endif()
