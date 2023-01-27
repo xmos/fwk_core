@@ -8,7 +8,7 @@ add_subdirectory(otpinfo)
 add_subdirectory(random)
 add_subdirectory(trycatch)
 add_subdirectory(utils)
-add_subdirectory(xs3_math)
+add_subdirectory(xcore_math)
 
 if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS2A))
     ## Create an aggregate of framework_core general libraries

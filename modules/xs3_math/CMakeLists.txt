@@ -1,1 +1,0 @@
-add_subdirectory(lib_xs3_math/lib_xcore_math)
