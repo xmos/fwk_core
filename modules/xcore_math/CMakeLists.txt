@@ -1,0 +1,1 @@
+add_subdirectory(lib_core_math/lib_xcore_math)

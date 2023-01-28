@@ -1,6 +1,6 @@
-[submodule "lib_xs3_math"]
-	path = modules/xs3_math/lib_xs3_math
-	url = git@github.com:xmos/lib_xs3_math.git
+[submodule "lib_xcore_math"]
+	path = modules/xcore_math/lib_xcore_math
+	url = git@github.com:xmos/lib_xcore_math.git
 [submodule "lib_l2_cache"]
 	path = modules/l2_cache/lib_l2_cache
 	url = git@github.com:xmos/lib_l2_cache.git

@@ -7,5 +7,4 @@ xmos_cmake_toolchain
 modules/legacy_compat
 modules/otpinfo
 modules/random
-modules/inferencing
-modules/experimental
+modules/trycatch
