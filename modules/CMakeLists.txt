@@ -1,6 +1,5 @@
 ## Add framework libraries
 add_subdirectory(clock_control)
-add_subdirectory(experimental)
 add_subdirectory(l2_cache)
 add_subdirectory(legacy_compat)
 add_subdirectory(multitile_support)
@@ -16,7 +15,6 @@ if((${CMAKE_SYSTEM_NAME} STREQUAL XCORE_XS3A) OR (${CMAKE_SYSTEM_NAME} STREQUAL 
     target_link_libraries(framework_core_general
         INTERFACE
             framework_core_clock_control
-            framework_core_dsp_filters
             framework_core_legacy_compat
             framework_core_utils
             lib_l2_cache

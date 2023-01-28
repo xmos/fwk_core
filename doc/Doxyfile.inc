@@ -9,7 +9,7 @@ PREDEFINED += __attribute__((weak))=
 PREDEFINED += C_API= MA_C_API= C_API_START= C_API_END= EXTERN_C=
 
 # library APIs
-INPUT += ../modules/xs3_math 
+INPUT += ../modules/xcore_math 
 
 USE_MATHJAX = YES
 MATHJAX_FORMAT = HTML-CSS
