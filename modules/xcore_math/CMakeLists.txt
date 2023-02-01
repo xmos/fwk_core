@@ -1,1 +1,1 @@
-add_subdirectory(lib_core_math/lib_xcore_math)
+add_subdirectory(lib_xcore_math/lib_xcore_math)
