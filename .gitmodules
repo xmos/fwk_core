@@ -1,0 +1,18 @@
+[submodule "lib_xcore_math"]
+	path = modules/xcore_math/lib_xcore_math
+	url = git@github.com:xmos/lib_xcore_math.git
+[submodule "lib_l2_cache"]
+	path = modules/l2_cache/lib_l2_cache
+	url = git@github.com:xmos/lib_l2_cache.git
+[submodule "lib_random"]
+	path = modules/random/lib_random
+	url = git@github.com:xmos/lib_random.git
+[submodule "lib_otpinfo"]
+	path = modules/otpinfo/lib_otpinfo
+	url = git@github.com:xmos/lib_otpinfo.git
+[submodule "xmos_cmake_toolchain"]
+	path = xmos_cmake_toolchain
+	url = git@github.com:xmos/xmos_cmake_toolchain.git
+[submodule "trycatch"]
+	path = modules/trycatch/lib_trycatch
+	url = git@github.com:xmos/lib_trycatch.git
