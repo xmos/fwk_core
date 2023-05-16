@@ -126,7 +126,7 @@ int main(void) {
                     null,
 #endif
 #if (PLATFORM_SUPPORTS_TILE_2 == 1) && (PLATFORM_USES_TILE_2 == 1)
-                    c_t2_t3
+                    c_t2_t3,
 #else
                     null,
 #endif
