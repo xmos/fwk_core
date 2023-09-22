@@ -1,0 +1,10 @@
+---
+project: fwk_core
+title: XCORE Core Framework
+version: 1.0.0
+
+documentation:
+  exclude_patterns_path: doc/exclude_patterns.inc
+  doxygen_projects:
+    fwk_core:
+      doxyfile_path: doc/Doxyfile.inc
