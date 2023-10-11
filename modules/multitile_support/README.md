@@ -21,11 +21,11 @@ prototypes (for tiles 0 and 1 respectively) will be:
     void main_tile0(chanend_t c);
     void main_tile1(chanend_t c);
 
-The chanend_t c can be used on each tile to communicate with the other 
+The *chanend_t c* can be used on each tile to communicate with the other 
 tile by making use of the functions defined in **<xcore/channel.h>**. Note
-that any channel communication operation (e.g. *chan_out_word(c, 100); )
+that any channel communication operation (e.g. *chan_out_word(c, 100);* )
 on one tile must be matched by the opposite channel operation on the 
-other tile (e.g. *int a = chan_in_word(c); )
+other tile (e.g. *int a = chan_in_word(c);* )
 
 To achieve this configuration, the required preprocessor defines are:
 
@@ -50,12 +50,12 @@ the form:
 
 where *X* is the tile number. The four arguments are channel ends that 
 connect to each of the other tiles. In the above protoype, c*Y* indicates a 
-channel to tile *Y*. Where a tile *Y* is not available and used, or the channel
-indicates a loopback (i.e. *X* == *Y*), that channel end argument is not a
-valid channel end, and must not be used.
+channel to tile *Y*. Where a tile *Y* is not both supported and used, or the 
+channel indicates a loopback (i.e. *X* == *Y*), that channel end argument is 
+not a valid channel end, and must not be used.
 
 If **MINIMISE_MAIN_TILE_ARGS** is defined, the entry point prototype for 
-tiles defined as both available and used will be as described above except  
+tiles defined as both supported and used will be as described above except
 that invalid channel ends are removed. For example, if tiles 0, 2 and 3 are 
 available and used and MINIMISE_MAIN_TILE_ARGS is defined, the entry point 
 prototypes would be:
@@ -65,8 +65,8 @@ prototypes would be:
     void main_tile3(chanend c0, chanend c2);
 
 When setting preprocessor defines, using the **MINIMISE_MAIN_TILE_ARGS** define
-also means that PLATFORM_SUPPORTS_TILE_*X* and PLATFORM_USES_TILE_*X* that are 
-undefined are considered to be the equivalent to being set to 0.
+also means that **PLATFORM_SUPPORTS_TILE_*X*** and **PLATFORM_USES_TILE_*X***  
+that are undefined are considered to be the equivalent to being set to 0.
 
 ## Inter-tile communication
 
