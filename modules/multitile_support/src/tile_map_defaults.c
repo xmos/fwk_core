@@ -1,6 +1,14 @@
 // Copyright 2021 XMOS LIMITED.
 // This Software is subject to the terms of the XMOS Public Licence: Version 1.
 
+/* 
+tile_map_defaults.c
+
+This file defines weak C entry point implementations for each tile on an XCore 
+device. Configuration matches the protoype given in tile_map.xc
+
+Please the multi-tile support module README for further details.      
+*/
 #include <platform.h>
 
 #include <xcore/chanend.h>

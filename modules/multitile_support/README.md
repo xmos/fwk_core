@@ -8,9 +8,15 @@ using 2 or 4 tile XCore devices.
 
 Starting a multi-tile application on an XCore device requires that an
 entry point be defined for each tile. These entry points replace the 
-C standard main() entry point. In order to make communication possible 
-between the tiles of an XCore device, the multi-tile entry points 
-provide an XCore channel between each pair of tiles used. 
+C standard main() entry point and are defined in tile_map.xc. In order 
+to make communication possible between the tiles of an XCore device, 
+the multi-tile entry points provide an XCore channel between each pair 
+of tiles used. 
+
+A set of weak implementations is provided for inclusion in your 
+project by adding tile_map_defaults.c to your build sources. This allows
+the application code for on tile to be compiled and tested without 
+adding code for other tiles.
 
 ### Standard two tile configuration (e.g. XCore.ai)
 
@@ -67,6 +73,8 @@ prototypes would be:
 When setting preprocessor defines, using the **MINIMISE_MAIN_TILE_ARGS** define
 also means that **PLATFORM_SUPPORTS_TILE_*X*** and **PLATFORM_USES_TILE_*X***  
 that are undefined are considered to be the equivalent to being set to 0.
+
+
 
 ## Inter-tile communication
 
