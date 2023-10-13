@@ -89,7 +89,7 @@ __attribute__((weak))
 
 // c1
 #if ((PLATFORM_SUPPORTS_TILE_1 == 1) && (PLATFORM_USES_TILE_1 == 1))
-                      chanend c1
+                      chanend_t c1
 #define ARGS_STARTED
 #endif
 
@@ -99,7 +99,7 @@ __attribute__((weak))
 #ifdef ARGS_STARTED
                       ,  
 #endif
-                      chanend c2
+                      chanend_t c2
 #define ARGS_STARTED
 #endif
 
@@ -109,7 +109,7 @@ __attribute__((weak))
 #ifdef ARGS_STARTED
                       ,  
 #endif
-                      chanend c3
+                      chanend_t c3
 #endif
                       )
 {
@@ -127,7 +127,7 @@ __attribute__((weak))
   
 // c0
 #if ((PLATFORM_SUPPORTS_TILE_0 == 1) && (PLATFORM_USES_TILE_0 == 1))
-                      chanend c0
+                      chanend_t c0
 #define ARGS_STARTED
 #endif
 
@@ -140,7 +140,7 @@ __attribute__((weak))
 #ifdef ARGS_STARTED
                       ,  
 #endif
-                      chanend c2
+                      chanend_t c2
 #define ARGS_STARTED
 #endif
 
@@ -150,7 +150,7 @@ __attribute__((weak))
 #ifdef ARGS_STARTED
                       ,  
 #endif
-                      chanend c3
+                      chanend_t c3
 #endif
 
                       )
@@ -170,7 +170,7 @@ __attribute__((weak))
   
 // c0
 #if ((PLATFORM_SUPPORTS_TILE_0 == 1) && (PLATFORM_USES_TILE_0 == 1))
-                      chanend c0
+                      chanend_t c0
 #define ARGS_STARTED
 #endif
 
@@ -178,7 +178,7 @@ __attribute__((weak))
 #ifdef ARGS_STARTED
                       ,  
 #endif
-                      chanend c1
+                      chanend_t c1
 #define ARGS_STARTED
 #endif
 
@@ -191,7 +191,7 @@ __attribute__((weak))
 #ifdef ARGS_STARTED
                       ,  
 #endif
-                      chanend c3
+                      chanend_t c3
 #endif
 
                       )
@@ -211,7 +211,7 @@ __attribute__((weak))
   
 // c0
 #if ((PLATFORM_SUPPORTS_TILE_0 == 1) && (PLATFORM_USES_TILE_0 == 1))
-                      chanend c0
+                      chanend_t c0
 #define ARGS_STARTED
 #endif
 
@@ -219,7 +219,7 @@ __attribute__((weak))
 #ifdef ARGS_STARTED
                       ,  
 #endif
-                      chanend c1
+                      chanend_t c1
 #define ARGS_STARTED
 #endif
 
@@ -229,7 +229,7 @@ __attribute__((weak))
 #ifdef ARGS_STARTED
                       ,  
 #endif
-                      chanend c2
+                      chanend_t c2
 #endif
 
                       
