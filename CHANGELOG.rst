@@ -1,6 +1,13 @@
 Core Framework change log
 =========================
 
+1.0.2
+-----
+
+  * CHANGED: Updated lib_xcore_math to v2.3.1, see lib_xcore_math
+    for differences.
+  * CHANGED: Use xmosdoc v4 for documentation build.
+
 1.0.1
 -----
 
