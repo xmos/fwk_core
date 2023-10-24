@@ -6,6 +6,14 @@ Core Framework change log
 
   * CHANGED: Updated lib_xcore_math to v2.3.1, see lib_xcore_math
     for differences.
+  * CHANGED: Updated lib_l2_cache to v1.0.0, see lib_l2_cache
+    for differences.
+  * CHANGED: Updated lib_otpinfo to v2.1.0, see lib_otpinfo
+    for differences.
+  * CHANGED: Updated lib_random to v1.1.0, see lib_random
+    for differences.
+  * CHANGED: Updated lib_trycatch to v2.3.1, see lib_trycatch
+    for differences.
   * CHANGED: Use xmosdoc v4 for documentation build.
 
 1.0.1
