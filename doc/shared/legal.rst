@@ -1,7 +1,15 @@
 .. _sln_voice_copyright:
 
 
-.. include:: ../_templates/disclaimer.rst
+Copyright & Disclaimer
+======================
+
+|XMOS copyright|
+
+|XMOS disclaimer|
+
+|XMOS trademarks|
+
 
 Licenses
 ========

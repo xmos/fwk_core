@@ -14,4 +14,4 @@ Optimized
    :maxdepth: 1
    :includehidden:
 
-   modules/xcore_math/lib_xcore_math/doc/index.rst
+   modules/xcore_math/lib_xcore_math/index.rst
