@@ -1,0 +1,63 @@
+# Editor cruft
+**/.vscode/
+
+# Python cruft
+**/*.pyc
+**/__pycache__/*
+**/*.egg-info/*
+**/*.eggs/*
+**/.ipynb_checkpoints/*
+
+# Build & debug cruft
+**/.build*/*
+**/bin/*
+*.o
+*.so*
+*.dylib
+*.xe
+*.vcd
+*.s
+*.xi
+*.i
+*.a
+*.xmt
+**/_build/
+**/build_*/
+**/dist_*/
+!doc/build_system_guide/
+**/run_*.log
+**/_doxygen/*
+**/_templates/*
+**/pdf/*
+**/html/*
+**/.settings/*
+.metadata
+**/test_results.csv
+**/test_results.xml
+**/.venv/**
+.metadata
+*.gtkw
+*.swmem
+*.bin
+*.fs
+
+# Test cruft
+**/.pytest_cache/*
+**/*_junit.xml
+**/testing/*
+
+# filesystem cruft
+**/fat.fs
+**/flash_bin_node0
+**/fw-*
+**/spanning-xn-*
+**/target-xn-*
+
+# wifi cruft
+**/networks.dat
+
+# systemview debug cruft
+*.SVDAT
+
+# macOS cruft
+.DS_Store
