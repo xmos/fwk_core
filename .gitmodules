@@ -16,3 +16,9 @@
 [submodule "trycatch"]
 	path = modules/trycatch/lib_trycatch
 	url = git@github.com:xmos/lib_trycatch.git
+[submodule "modules/multitile_support/tests/tile_map_defines/modules/fwk_rtos"]
+	path = modules/multitile_support/tests/tile_map_defines/modules/fwk_rtos
+	url = git@github.com:xmos/fwk_rtos.git
+[submodule "modules/multitile_support/tests/tile_map_defines/modules/xmos_cmake_toolchain"]
+	path = modules/multitile_support/tests/tile_map_defines/modules/xmos_cmake_toolchain
+	url = git@github.com:xmos/xmos_cmake_toolchain.git
