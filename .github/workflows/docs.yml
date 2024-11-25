@@ -36,19 +36,19 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: recursive
-      
+
       - name: Pull documentation builder docker image
         run: |
           docker pull ${DOC_BUILDER_IMAGE}
-      
+
       - name: Build documentation
         run: |
           docker run --rm -t -u "$(id -u):$(id -g)" -v ${{ github.workspace }}:/build ${DOC_BUILDER_IMAGE} -vv
 
       - name: Save HTML documentation artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: fwk_core_docs_html
           path: ./doc/_build/html
-          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn` 
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
           retention-days: 5
