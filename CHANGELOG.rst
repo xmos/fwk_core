@@ -1,6 +1,12 @@
 Core Framework change log
 =========================
 
+1.1.0
+-----
+
+  * CHANGED: Updated lib_xcore_math to v2.4.0 from v2.3.1.
+  * CHANGED: Updated lib_random to v1.2.0 from v1.1.0.
+
 1.0.2
 -----
 
