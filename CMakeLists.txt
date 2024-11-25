@@ -22,7 +22,7 @@ add_subdirectory(modules)
 
 ## Add targets for when this is the top level project
 if(PROJECT_IS_TOP_LEVEL)
-    include(examples/examples.cmake)
+    include(examples/example.cmake)
 endif()
 
 if(FRAMEWORK_CORE_TESTS)
